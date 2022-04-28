@@ -1,0 +1,25 @@
+
+Voting link : http://52.221.207.151:31000/
+Result link : http://52.221.207.151:31001/
+
+Votings are working fine.
+
+
+1. Deleting Voting Pod:
+
+ -> After deleting vote pod, Replica set is created another pod with new container and app is still running with the new container.
+
+2. Deleting Worker pod:
+
+ -> Still there is no issue in the application, able to vote and getting the results. New worker pod got created when it is deleted.
+
+3. Deleting DB pod:
+
+ -> We lost the votes which we are voted previously. (worker node got restarted)
+ -> Able to vote but not reflecting in the results page.
+ -> Lost the connection between the db pod and result pod.
+
+ -> To get back the results, delete the result pod, so that the new pod get created and search for new db pod and connects to that.
+
+ -> Now we will get all votes which are recorded after worker restart.
+    
