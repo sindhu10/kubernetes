@@ -7,7 +7,7 @@ Votings are working fine.
 
 1. Deleting Voting Pod:
 
- -> After deleting vote pod, Replica set is created another pod with new container and app is still running with the new container.
+ -> After deleting vote pod, new vote pod got created with new container and app is still running with the new container.
 
 2. Deleting Worker pod:
 
