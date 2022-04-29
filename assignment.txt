@@ -1,0 +1,26 @@
+1. Replica Set:
+
+Replica Set will create set of pods specified in config and run all the time. If we delete one pod will create new pod with running status.
+
+Daemon set will manage the working nodes and pods, it ensure that a node should have a pod.
+
+
+2. Deployment:
+
+
+[root@ip-172-31-16-169 09-deployments]# kubectl patch deployment kubia -p '{"spec": {"minReadySeconds": 10}}'
+deployment.apps/kubia patched
+
+->updating image
+[root@ip-172-31-16-169 09-deployments]# kubectl set image deployment kubia nodejs=luksa/kubia:v2
+deployment.apps/kubia image updated
+
+
+
+3.Services:
+
+
+nodeport is internally using service ip to fetch the working pod. 
+
+So we should check all the specifications in replicaset yml file like nodeport, service ip, target port. 
+All the specifications should match with application specifications like ports etc
